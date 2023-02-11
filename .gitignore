@@ -27,13 +27,15 @@ Makefile*
 *.prl
 *.app
 moc_*.cpp
+moc_*.h
 ui_*.h
 qrc_*.cpp
 Thumbs.db
 *.res
 *.rc
-/.qmake.cache
-/.qmake.stash
+.qmake.cache
+.qmake.stash
+build/
 
 # qtcreator generated files
 *.pro.user*
@@ -45,7 +47,7 @@ CMakeLists.txt.user*
 # Vim temporary files
 .*.swp
 
-# Visual Studio generated files
+# Visual Studio and VSCode generated files
 *.ib_pdb_index
 *.idb
 *.ilk
@@ -59,16 +61,15 @@ CMakeLists.txt.user*
 *.opensdf
 *.vcxproj
 *vcxproj.*
+.vscode
 
 # MinGW generated files
 *.Debug
 *.Release
 
-# Python byte code
-*.pyc
-
 # Binaries
 # --------
 *.dll
 *.exe
+ScheduleVortex
 
