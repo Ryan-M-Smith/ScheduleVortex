@@ -8,10 +8,17 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
+#include <iostream>
+#include <string>
+
 #include <QMainWindow>
+#include <QInputDialog>
+#include <QString>
+#include <QLineEdit>
 
 #include "qt-ui.hpp"
 #include "tasklist.hpp"
+#include "calendar.hpp"
 
 class MainWindow: public QMainWindow {
 	Q_OBJECT
@@ -22,6 +29,7 @@ public:
 
 private:
 	Ui::MainWindow* m_UI;
+	Calendar* m_Calendar;
 
 	TaskList* m_TaskList;
 };
