@@ -15,21 +15,19 @@ INCPATH += ../../
 SOURCES += \
 	main.cpp \
 	mainwindow.cpp \
-	tasklist.cpp \
+	listwrapper.cpp \
 	calendar.cpp \
 	../../date.cpp
 
 HEADERS += \
 	mainwindow.h \
 	qt-ui.hpp \
-	tasklist.hpp \
+	listwrapper.hpp \
 	calendar.hpp \
 	../../date.hpp
 
 FORMS += \
 	../mainwindow.ui
-
-
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
