@@ -10,15 +10,19 @@
 
 #include <iostream>
 #include <string>
+#include <utility>
 
 #include <QMainWindow>
 #include <QInputDialog>
 #include <QString>
 #include <QLineEdit>
+#include <QDate>
+#include <QTextCharFormat>
 
 #include "qt-ui.hpp"
-#include "tasklist.hpp"
+#include "listwrapper.hpp"
 #include "calendar.hpp"
+#include "date.hpp"
 
 class MainWindow: public QMainWindow {
 	Q_OBJECT
@@ -28,10 +32,15 @@ public:
 	~MainWindow();
 
 private:
+	std::pair<QString, bool> InputDialog(const QString& title, const QString& prompt);
+
 	Ui::MainWindow* m_UI;
 	Calendar* m_Calendar;
 
-	TaskList* m_TaskList;
+	ListWrapper *m_TaskList, *m_EventList;
+
+private slots:
+	void DisplayEvents(const QDate& date);
 };
 
 #endif // MAINWINDOW_H
