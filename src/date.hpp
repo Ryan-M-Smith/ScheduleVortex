@@ -8,9 +8,12 @@
 #ifndef DATE_HPP
 #define DATE_HPP
 
+#include <iostream>
 #include <string>
 #include <vector>
 #include <tuple>
+
+#include <QDate>
 
 using std::string;
 
@@ -19,14 +22,20 @@ public:
 	Date(int month, int day, int year);
 	Date(int month, int day, int year, string eventName);
 
-	void AddEvent(string eventName);
-	void RemoveEvent(string eventName);
+	static Date* FromQDate(const QDate& date);
+	static QDate ToQDate(const Date& date);
 
-	std::tuple<int, int, int> GetDate();
+	bool operator==(const Date& date) const;
+
+	void AddEvent(const string& eventName);
+	void RemoveEvent(int index);
+
+	constexpr std::tuple<int, int, int> GetDate() const;
+	std::vector<string> GetEvents() const;
 
 private:
 	int m_Month, m_Day, m_Year;
-	std::vector<string> m_Events;
+	std::vector<string> m_Events {};
 };
 
 #endif // DATE_HPP
