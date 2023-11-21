@@ -88,7 +88,7 @@ void MainWindow::DisplayEvents(const QDate& date) {
 	// it will remain empty.
 	if (Date* date = m_Calendar->GetDate(calDate)) {
 		for (auto event: date->GetEvents()) {
-			m_EventList->AddItem(event);
+			m_EventList->AddItem(event); // Display data from the list on the screen
 		}
 	}
 }
