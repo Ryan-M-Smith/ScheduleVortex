@@ -25,8 +25,7 @@ Date* Date::FromQDate(const QDate& date) {
 }
 
 QDate Date::ToQDate(const Date& date) {
-	int month, day, year;
-	std::tie(month, day, year) = date.GetDate();
+	auto&& [month, day, year] = date.GetDate();
 	return QDate(year, month, day);
 }
 
