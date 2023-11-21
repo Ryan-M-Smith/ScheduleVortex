@@ -31,8 +31,7 @@ QDate Date::ToQDate(const Date& date) {
 
 // Allow comparing dates with the == operator
 bool Date::operator==(const Date& date) const {
-	int month, day, year;
-	std::tie(month, day, year) = date.GetDate(); // Get the info of the other date
+	auto &&[month, day, year] = date.GetDate(); // Get the info of the other date
 
 	// Two dates will be considered equal if they have the same
 	// month, day, and year
